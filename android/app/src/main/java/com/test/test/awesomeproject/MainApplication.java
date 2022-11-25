@@ -3,7 +3,7 @@ package com.test.test.awesomeproject;
 import android.app.Application;
 import android.content.Context;
 
-import com.awesomeproject.BuildConfig;
+import com.test.test.awesomeproject.BuildConfig;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -75,7 +75,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.awesomeproject.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.test.test.awesomeproject.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);
