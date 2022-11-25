@@ -12,13 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Generate Release AAB
-        run: ./gradlew bundleRelease
+        run: cd android && ./gradlew bundleRelease
       - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
         # ID used to access action output
         id: sign_app
         with:
-          releaseDirectory: app/build/outputs/bundle/release
+          releaseDirectory: android/app/build/outputs/bundle/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -30,7 +30,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: mapping.txt
-          path: app/build/outputs/mapping/release/mapping.txt
+          path: android/app/build/outputs/mapping/release/mapping.txt
 
   deploy-play-store:
     needs: [build]
