@@ -17,19 +17,23 @@ jobs:
         run: cd android && chmod +x ./gradlew
       - name: Generate Release AAB
         run: cd android && ./gradlew bundleRelease
-      - run: 'echo "$SIGNING_KEY"'
+      - name: print SIGNING_KEY
+        run: 'echo "$SIGNING_KEY"'
         shell: bash
         env:
           SIGNING_KEY: ${{secrets.SIGNING_KEY}}
-      - run: 'echo "$ALIAS"'
+      - name: print ALIAS
+        run: 'echo "$ALIAS"'
         shell: bash
         env:
           ALIAS: ${{secrets.ALIAS}}
-      - run: 'echo "$KEY_STORE_PASSWORD"'
+      - name: print KEY_STORE_PASSWORD
+        run: 'echo "$KEY_STORE_PASSWORD"'
         shell: bash
         env:
           KEY_STORE_PASSWORD: ${{secrets.KEY_STORE_PASSWORD}}
-      - run: 'echo "$KEY_PASSWORD"'
+      - name: print KEY_PASSWORD
+        run: 'echo "$KEY_PASSWORD"'
         shell: bash
         env:
           KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
