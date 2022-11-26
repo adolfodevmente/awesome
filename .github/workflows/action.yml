@@ -18,12 +18,20 @@ jobs:
       - name: Generate Release AAB
         run: cd android && ./gradlew bundleRelease
       - name: print SIGNING_KEY
+        env: 
+          SIGNING_KEY: ${{secrets.SIGNING_KEY}}
         run: echo ${{secrets.SIGNING_KEY}}
       - name: print ALIAS
+        env: 
+          ALIAS: ${{secrets.ALIAS}}
         run: echo ${{secrets.ALIAS}}
       - name: print KEY_STORE_PASSWORD
+        env: 
+          KEY_STORE_PASSWORD: ${{secrets.KEY_STORE_PASSWORD}}
         run: echo ${{secrets.KEY_STORE_PASSWORD}}
       - name: print KEY_PASSWORD
+        env: 
+          KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
         run: echo ${{secrets.KEY_PASSWORD}}
       - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
