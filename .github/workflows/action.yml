@@ -17,14 +17,22 @@ jobs:
         run: cd android && chmod +x ./gradlew
       - name: Generate Release AAB
         run: cd android && ./gradlew bundleRelease
-      - name: print secrets.SIGNING_KEY
-        run: echo ${{ secrets.SIGNING_KEY }}
-      - name: print secrets.ALIAS
-        run: echo ${{ secrets.ALIAS }}
-      - name: print secrets.KEY_STORE_PASSWORD
-        run: echo ${{ secrets.KEY_STORE_PASSWORD }}
-      - name: print secrets.KEY_PASSWORD
-        run: echo ${{ secrets.KEY_PASSWORD }}
+      - run: 'echo "$SIGNING_KEY"'
+        shell: bash
+        env:
+          SIGNING_KEY: ${{secrets.SIGNING_KEY}}
+      - run: 'echo "$ALIAS"'
+        shell: bash
+        env:
+          ALIAS: ${{secrets.ALIAS}}
+      - run: 'echo "$KEY_STORE_PASSWORD"'
+        shell: bash
+        env:
+          KEY_STORE_PASSWORD: ${{secrets.KEY_STORE_PASSWORD}}
+      - run: 'echo "$KEY_PASSWORD"'
+        shell: bash
+        env:
+          KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
       - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
         # ID used to access action output
