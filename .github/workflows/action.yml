@@ -16,7 +16,7 @@ jobs:
       - name: Make Gradlew Executable
         run: cd android && chmod +x ./gradlew
       - name: Generate Release AAB
-        run: cd android && ./gradlew bundleRelease
+        run: cd android && ./gradlew assembleRelease
 
       - name: print SIGNING_KEY
         shell: bash
