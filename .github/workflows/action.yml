@@ -58,5 +58,6 @@ jobs:
           packageName: com.test.test.awesomeproject
           releaseFile: app-release.aab
           track: internal
+          status: draft
 #          userFraction: 0.50
 #          mappingFile: mapping.txt
