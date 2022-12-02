@@ -83,6 +83,7 @@ jobs:
           npm install -y cocoapods
           cd ios
           pod install
+          xcversion(version: "14.0.1")
           fastlane run build_app
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
