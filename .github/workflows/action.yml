@@ -80,7 +80,7 @@ jobs:
           exec .github/scripts/import-profile.sh
       - name: Build app
         run: |
-          gem install cocoapods
+          npm install -y cocoapods
           cd ios
           pod install
           fastlane run build_app
