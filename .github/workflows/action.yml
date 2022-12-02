@@ -58,7 +58,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: macos-latest
+    runs-on: macos-10.15
 
     steps:
       - name: Checkout project
