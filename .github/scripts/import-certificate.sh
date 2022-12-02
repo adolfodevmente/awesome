@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+cd ios
+
 security create-keychain -p "" build.keychain
 security list-keychains -s build.keychain
 security default-keychain -s build.keychain

@@ -69,13 +69,13 @@ jobs:
           exec .github/scripts/set-env-from-xcodeproj.sh
       - name: Import signing certificate
         env:
-          SIGNING_CERTIFICATE_P12_DATA: ${{ secrets.SIGNING_CERTIFICATE_P12_DATA }}
-          SIGNING_CERTIFICATE_PASSWORD: ${{ secrets.SIGNING_CERTIFICATE_PASSWORD }}
+          SIGNING_CERTIFICATE_P12_DATA: ${{ secrets.APPLE_SIGNING_CERTIFICATE_P12_DATA }}
+          SIGNING_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_SIGNING_CERTIFICATE_PASSWORD }}
         run: |
           exec .github/scripts/import-certificate.sh
       - name: Import provisioning profile
         env:
-          PROVISIONING_PROFILE_DATA: ${{ secrets.PROVISIONING_PROFILE_DATA }}
+          PROVISIONING_PROFILE_DATA: ${{ secrets.APPLE_PROVISIONING_PROFILE_DATA }}
         run: |
           exec .github/scripts/import-profile.sh
       - name: Build app
@@ -87,20 +87,21 @@ jobs:
           name: build.log
           path: ~/Library/Logs/gym/*.log
 
-      - name: Upload release assets
+#      - name: Upload release assets
 #        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            ${{ env.PRODUCT_NAME }}.ipa
-            ${{ env.PRODUCT_NAME }}.app.dSYM.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          files: |
+#            ${{ env.PRODUCT_NAME }}.ipa
+#            ${{ env.PRODUCT_NAME }}.app.dSYM.zip
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.APPLE_GITHUB_TOKEN }}
 
       - name: Upload app to App Store Connect
 #        if: startsWith(github.ref, 'refs/tags/v')
         env:
-          APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
-          APP_STORE_CONNECT_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
+          APP_STORE_CONNECT_USERNAME: ${{ secrets.APPLE_APP_STORE_CONNECT_USERNAME }}
+          APP_STORE_CONNECT_PASSWORD: ${{ secrets.APPLE_APP_STORE_CONNECT_PASSWORD }}
         run: |
+          cd ios
           xcrun altool --upload-app -t ios -f "$PRODUCT_NAME.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
