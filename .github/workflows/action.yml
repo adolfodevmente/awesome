@@ -80,7 +80,9 @@ jobs:
           exec .github/scripts/import-profile.sh
       - name: Build app
         run: |
+          gem install cocoapods
           cd ios
+          pod install
           fastlane run build_app
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
