@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ios
 
 set -euo pipefail
 
