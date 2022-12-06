@@ -497,7 +497,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RKKJN5529D;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RKKJN5529D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = awesome/Info.plist;
@@ -516,7 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.test.awesome;
 				PRODUCT_NAME = awesome;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = awesome;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = awesome;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -534,7 +534,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RKKJN5529D;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RKKJN5529D;
 				INFOPLIST_FILE = awesome/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = awesome;
@@ -552,7 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.test.awesome;
 				PRODUCT_NAME = awesome;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = awesome;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = awesome;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
