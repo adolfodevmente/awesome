@@ -78,6 +78,8 @@ jobs:
           PROVISIONING_PROFILE_DATA: ${{ secrets.APPLE_PROVISIONING_PROFILE_DATA }}
         run: |
           exec .github/scripts/import-profile.sh
+      - name: temporal
+        run: |
           echo "home: $HOME"
           pwd
           ls -l ~/Library/MobileDevice/Provisioning\ Profiles
