@@ -84,7 +84,7 @@ jobs:
           gem install fastlane
           npm install -y cocoapods
           cd ios
-          pod installs
+          pod install
           fastlane run build_app
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
