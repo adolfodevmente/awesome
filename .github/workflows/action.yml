@@ -77,6 +77,7 @@ jobs:
         env:
           PROVISIONING_PROFILE_DATA: ${{ secrets.APPLE_PROVISIONING_PROFILE_DATA }}
         run: |
+          ls -l
           exec .github/scripts/import-profile.sh
           ls -l $HOME/Library/MobileDevice/Provisioning\ Profiles\
       - name: Build app
