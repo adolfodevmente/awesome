@@ -78,6 +78,7 @@ jobs:
           PROVISIONING_PROFILE_DATA: ${{ secrets.APPLE_PROVISIONING_PROFILE_DATA }}
         run: |
           exec .github/scripts/import-profile.sh
+          ls -l $HOME/Library/MobileDevice/Provisioning\ Profiles\
       - name: Build app
         run: |
           gem install cocoapods
