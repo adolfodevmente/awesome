@@ -79,7 +79,9 @@ jobs:
         run: |
           ls -l
           exec .github/scripts/import-profile.sh
-          ls -l $HOME/Library/MobileDevice/Provisioning\ Profiles\
+          ls -l $HOME
+          ls -l ~/
+          ls -l ~/Library/MobileDevice/Provisioning\ Profiles\
       - name: Build app
         run: |
           gem install cocoapods
