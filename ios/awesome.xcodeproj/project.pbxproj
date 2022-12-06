@@ -433,9 +433,9 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-awesome-awesomeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RKKJN5529D;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RKKJN5529D;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -455,6 +455,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.test.awesome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = awesome;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = awesome;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/awesome.app/awesome";
 			};
 			name = Debug;
@@ -464,7 +466,7 @@
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-awesome-awesomeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = RKKJN5529D;
@@ -483,6 +485,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.test.awesome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = awesome;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = awesome;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/awesome.app/awesome";
 			};
 			name = Release;
